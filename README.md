@@ -1,40 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+네, 알겠습니다. 당신의 가족 중심 비전과 구체적인 기능 요구사항을 모두 반영하여, 포트폴리오로 제출하기에 완벽한 `README.md`를 작성해 드리겠습니다.
 
-## Getting Started
+이 문서는 프로젝트의 명확한 목표와 기술적 깊이를 보여줄 것입니다.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 우리 가족 건강 매니저
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 👨‍👩‍👧‍👦 가족의 식단과 건강 상태를 '함께' 관리하는 대시보드
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## ✨ 프로젝트 비전 및 배경
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+이 프로젝트는 가족 구성원들이 함께 건강을 관리하는 **'공동 관리 시스템'**을 구축하는 데 목표를 둡니다. 특히, 아침 식사 시간 등에 **태블릿이나 휴대폰을 통해 모두의 건강 지표를 확인하고 격려**하는 가족의 실제 생활 패턴에 최적화된 맞춤형 웹 애플리케이션입니다. 단순한 기록 앱을 넘어, 데이터 공유와 소통을 통해 가족의 건강한 생활 습관을 장려하는 것이 핵심 가치입니다.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 핵심 기능 (Functional Specifications)
 
-## Learn More
+| 카테고리        | 기능                         | 상세 내용                                                                                                                              |
+| :-------------- | :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **활동 기록**   | **실시간 걸음 수 체크**      | 휴대폰을 상시 휴대하는 패턴을 활용하여, **구글 피트니스 API**를 통해 실시간 걸음 수 데이터를 자동으로 가져와 기록합니다.               |
+| **건강 기록**   | **시간대별 혈당 로깅**       | 식사 시간이나 운동 후 혈당 수치를 직접 입력합니다. 혈당 변화를 시각적으로 추적하여 관리할 수 있습니다.                                 |
+| **체중 기록**   | **아침/저녁 체중 기록**      | 하루 2회(아침 기상 후, 저녁 활동 마무리 후) 몸무게를 기록하여 일일 체중 변화를 정밀하게 추적합니다.                                    |
+| **자동화 알림** | **스케줄링 알림 (카카오톡)** | 혈당 및 몸무게를 체크할 정해진 시간(예: 아침 식후, 저녁 취침 전)에 **카카오톡 메시지 API**를 통해 가족에게 알림을 자동으로 발송합니다. |
+| **대시보드**    | **가족 통합 뷰**             | 모든 가족 구성원의 최신 건강 지표와 기록을 한 화면에 나란히 배치하여 한눈에 파악할 수 있도록 합니다.                                   |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 🛠️ 기술 아키텍처 및 원칙
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+이 프로젝트는 **React** 기반의 컴포넌트 아키텍처를 따르며, 보안과 안정성을 최우선으로 설계되었습니다.
 
-## Deploy on Vercel
+### **기술 스택**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **프론트엔드**: **Next.js** (라우팅 및 구조 관리), **React** (UI 개발), **Tailwind CSS** (세련되고 빠른 디자인)
+- **데이터베이스**: **Firebase Firestore** (실시간 데이터 동기화 및 저장), **Firebase Authentication** (안전한 사용자 관리)
+- **API 연동**: **Google Fit API** (운동량 데이터)
+- **자동화**: **Node.js 서버 + Cron Job** (카카오톡 알림 스케줄링)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### **개발 원칙 (포트폴리오 강점)**
+
+1.  **클린 코드 & 타입 안전성**: **`TypeScript`**를 기반으로 모든 컴포넌트 Props, 함수 인자, 데이터 모델을 명확히 정의합니다. ( **`any` 타입 사용 금지**).
+2.  **모듈화**: '하나의 파일에 하나의 컴포넌트' 원칙을 철저히 준수하여 유지보수성과 가독성을 극대화합니다.
+3.  **보안 우선**: 구글 피트니스 **접근 토큰**은 브라우저(`localStorage`)가 아닌 **안전한 서버 환경**에서 관리됩니다. (향후 Next.js API Route로 구현 예정)
